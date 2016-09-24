@@ -41,6 +41,11 @@ int main(int argc,char *argv[])
         {
             cout << argv[2];
         }
+      if(string(argv[1] == "writetofile")
+        {
+            fstream file(string(argv[2]));
+            file << argv[3];
+        }
 
 
 
