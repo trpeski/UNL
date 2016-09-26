@@ -57,10 +57,12 @@ int main(int argc,char *argv[])
      //////////////////////////////////////////////////
       if(string(argv[1]) == "writetofile")
         {
-            fstream file(argv[2]);
+            ofstream file(argv[2]);
             file << argv[3];
             file.close();
         }
+
+
 
 
 
