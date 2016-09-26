@@ -28,23 +28,36 @@ SOFTWARE.
 #include <fstream>
 #include <stdlib.h>
 #include <string>
+
+
 using namespace std;
+
+
+
 int main(int argc,char *argv[])
 {
+
+/////////////////////////////////////////////////////
   if(argc == 1)
   {
      cout<<"No commands given"<<endl;
      exit(1);
   }
-  else
-  {
+/////////////////////////////////////////////////////
+  else{
+
+
+     //////////////////////////////////////////////////
       if(string(argv[1]) == "print")
         {
             cout << argv[2];
         }
+
+
+     //////////////////////////////////////////////////
       if(string(argv[1]) == "writetofile")
         {
-            fstream file(string(argv[2]));
+            fstream file(argv[2]);
             file << argv[3];
         }
 
