@@ -59,6 +59,7 @@ int main(int argc,char *argv[])
         {
             fstream file(argv[2]);
             file << argv[3];
+            file.close();
         }
 
 
