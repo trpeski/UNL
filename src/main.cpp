@@ -90,7 +90,14 @@ int main(int argc,char *argv[])
       /////////////////////////////////////////////
        if(string(argv[1]) == "help")
         {
-            cout << " print param(str) // prints to the screen \n\n writetofile param(name,str) // writes a word to a file \n\n readfromfile param(name) // reads from a file";
+            cout << " print param(str) // prints to the screen \n\n writetofile param(name,str) // writes a word to a file \n\n readfromfile param(name) // reads from a file \n\n delete param(name) // deletes a file ";
+        }
+      /////////////////////////////////////////////
+       if(string(argv[1]) == "delete")
+        {
+            string str("del ");
+            str += argv[2];
+            system(str.c_str());
         }
 
 
