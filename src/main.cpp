@@ -28,8 +28,9 @@ SOFTWARE.
 #include <fstream>
 #include <stdlib.h>
 #include <string>
+#include <sstream>
 
-#define MAX_SIZE 9
+
 using namespace std;
 
 
@@ -48,9 +49,9 @@ int main(int argc,char *argv[])
 
 
      //////////////////////////////////////////////////
-      if(string(argv[1]) == "print \n")
+      if(string(argv[1]) == "print")
         {
-            cout << argv[2];
+            cout << argv[2] << endl;
         }
 
 
@@ -63,28 +64,11 @@ int main(int argc,char *argv[])
         }
 
     /////////////////////////////////////////////////
-      if(string(argv[1]) == "readfromfile")
+     if(string(argv[1]) == "readfromfile")
         {
-            ifstream file(argv[2]);
-            bool endoffile = false;
-
-			char* str = new char[MAX_SIZE];
-
-			while (!file.eof())
-			{
-				for (int i = 0; i <= MAX_SIZE; i++)
-				{
-				    file >> str[i];
-				    if(str[i] == '\0'){endoffile = true; break;}
-				    cout << str[i];
-                }
-                if(endoffile == true)break;
-			}
-
-
-			delete[] str;
-
-            file.close();
+            std::stringstream ss;
+            ss << std::ifstream(argv[2]);
+            std::cout << ss.str() << std::endl;
         }
 
       /////////////////////////////////////////////
