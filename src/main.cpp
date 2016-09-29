@@ -29,7 +29,7 @@ SOFTWARE.
 #include <stdlib.h>
 #include <string>
 
-
+#define MAX_SIZE 9
 using namespace std;
 
 
@@ -48,7 +48,7 @@ int main(int argc,char *argv[])
 
 
      //////////////////////////////////////////////////
-      if(string(argv[1]) == "print")
+      if(string(argv[1]) == "print \n")
         {
             cout << argv[2];
         }
@@ -62,6 +62,36 @@ int main(int argc,char *argv[])
             file.close();
         }
 
+    /////////////////////////////////////////////////
+      if(string(argv[1]) == "readfromfile")
+        {
+            ifstream file(argv[2]);
+            bool endoffile = false;
+
+			char* str = new char[MAX_SIZE];
+
+			while (!file.eof())
+			{
+				for (int i = 0; i <= MAX_SIZE; i++)
+				{
+				    file >> str[i];
+				    if(str[i] == '\0'){endoffile = true; break;}
+				    cout << str[i];
+                }
+                if(endoffile == true)break;
+			}
+
+
+			delete[] str;
+
+            file.close();
+        }
+
+      /////////////////////////////////////////////
+       if(string(argv[1]) == "help")
+        {
+            cout << " print param(str) // prints to the screen \n\n writetofile param(name,str) // writes a word to a file \n\n readfromfile param(name) // reads from a file";
+        }
 
 
 
