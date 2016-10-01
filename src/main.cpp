@@ -66,30 +66,12 @@ int main(int argc,char *argv[])
     /////////////////////////////////////////////////
      if(string(argv[1]) == "readfromfile")
         {
-            ifstream file(argv[2]);
-            bool endoffile = false;
-
-			char* str = new char[MAX_STRING_SIZE];
-
-			while (!file.eof())
-			{
-				for (int i = 0; i <= MAX_STRING_SIZE; i++)
-				{
-				    file >> str[i];
-				    if(str[i] == '\0')
-                    {
-                        endoffile = true;
-                        break;
-                    }
-				    cout << str[i];
+            string line;
+            fstream file(argv[2]);
+            while(getline(file, line))
+                {
+                    cout << line;
                 }
-                if(endoffile == true)break;
-			}
-
-
-			delete[] str;
-
-            file.close();
         }
       /////////////////////////////////////////////
        if(string(argv[1]) == "help")
@@ -110,3 +92,4 @@ int main(int argc,char *argv[])
 	  return 0;
   }
 }
+
