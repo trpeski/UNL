@@ -33,7 +33,7 @@ SOFTWARE.
 
 using namespace std;
 
-
+#define MAX_STRING_SIZE 9999999999
 
 int main(int argc,char *argv[])
 {
@@ -69,11 +69,11 @@ int main(int argc,char *argv[])
             ifstream file(argv[2]);
             bool endoffile = false;
 
-			char* str = new char[1];
+			char* str = new char[MAX_STRING_SIZE];
 
 			while (!file.eof())
 			{
-				for (int i = 0; i <= 1; i++)
+				for (int i = 0; i <= MAX_STRING_SIZE; i++)
 				{
 				    file >> str[i];
 				    if(str[i] == '\0')
