@@ -66,11 +66,31 @@ int main(int argc,char *argv[])
     /////////////////////////////////////////////////
      if(string(argv[1]) == "readfromfile")
         {
-            std::stringstream ss;
-            ss << std::ifstream(argv[2]);
-            std::cout << ss.str() << std::endl;
-        }
+            ifstream file(argv[2]);
+            bool endoffile = false;
 
+			char* str = new char[1];
+
+			while (!file.eof())
+			{
+				for (int i = 0; i <= 1; i++)
+				{
+				    file >> str[i];
+				    if(str[i] == '\0')
+                    {
+                        endoffile = true;
+                        break;
+                    }
+				    cout << str[i];
+                }
+                if(endoffile == true)break;
+			}
+
+
+			delete[] str;
+
+            file.close();
+        }
       /////////////////////////////////////////////
        if(string(argv[1]) == "help")
         {
