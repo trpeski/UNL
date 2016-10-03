@@ -81,9 +81,7 @@ int main(int argc,char *argv[])
       /////////////////////////////////////////////
        else if(string(argv[1]) == "delete")
         {
-            string str("del ");
-            str += argv[2];
-            system(str.c_str());
+            remove(argv[2]);
         }
      //////////////////////////////////////////////
        else if(string(argv[1]) == "load")
