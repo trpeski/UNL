@@ -56,7 +56,7 @@ int main(int argc,char *argv[])
 
 
      //////////////////////////////////////////////////
-      if(string(argv[1]) == "writetofile")
+      else if(string(argv[1]) == "writetofile")
         {
             ofstream file(argv[2]);
             file << argv[3];
@@ -64,7 +64,7 @@ int main(int argc,char *argv[])
         }
 
     /////////////////////////////////////////////////
-     if(string(argv[1]) == "readfromfile")
+     else if(string(argv[1]) == "readfromfile")
         {
             string line;
             fstream file(argv[2]);
@@ -74,12 +74,12 @@ int main(int argc,char *argv[])
                 }
         }
       /////////////////////////////////////////////
-       if(string(argv[1]) == "help")
+       else if(string(argv[1]) == "help")
         {
             cout << " print param(str) // prints to the screen \n\n writetofile param(name,str) // writes a word to a file \n\n readfromfile param(name) // reads from a file \n\n delete param(name) // deletes a file ";
         }
       /////////////////////////////////////////////
-       if(string(argv[1]) == "delete")
+       else if(string(argv[1]) == "delete")
         {
             string str("del ");
             str += argv[2];
