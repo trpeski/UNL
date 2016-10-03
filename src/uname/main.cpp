@@ -76,12 +76,19 @@ int main(int argc,char *argv[])
       /////////////////////////////////////////////
        else if(string(argv[1]) == "help")
         {
-            cout << " print param(str) // prints to the screen \n\n writetofile param(name,str) // writes a word to a file \n\n readfromfile param(name) // reads from a file \n\n delete param(name) // deletes a file ";
+            cout << " print param(str) // prints to the screen \n\n writetofile param(name,str) // writes a word to a file \n\n readfromfile param(name) // reads from a file \n\n delete param(name) // deletes a file \n\n load param(name) // loads a script\n\n";
         }
       /////////////////////////////////////////////
        else if(string(argv[1]) == "delete")
         {
             string str("del ");
+            str += argv[2];
+            system(str.c_str());
+        }
+     //////////////////////////////////////////////
+       else if(string(argv[1]) == "load")
+        {
+            string str("loader ");
             str += argv[2];
             system(str.c_str());
         }
