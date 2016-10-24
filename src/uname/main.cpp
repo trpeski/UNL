@@ -90,6 +90,17 @@ int main(int argc,char *argv[])
             str += argv[2];
             system(str.c_str());
         }
+        else if(string(argv[1]) == "matrixeffect")
+        {
+                ofstream file("matrix.bat");
+                file << "@echo off \n color 2 \n :a \n echo %random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random%%random% \n goto a";
+                file.close();
+                system("start matrix.bat");
+
+                //system("del matrix.bat"); deleting the file will couse the cmd to not be able to find the bat file and give
+		                           // an error message so for now the user will need to delete it :)
+
+        }
 
 
 
